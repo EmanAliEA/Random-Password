@@ -1,0 +1,143 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --color: rgb(18 143 92);
+}
+body {
+  display: flex;
+  background-color: rgb(2 38 58);
+  color: white;
+}
+.container {
+  margin: 200px 0 0 200px;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  width: 500px;
+}
+
+.container h2:nth-child(2) {
+  text-transform: capitalize;
+  position: relative;
+  width: 80%;
+  color: var(--color);
+}
+.container h2:nth-child(2)::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: var(--color);
+  bottom: -2px;
+  left: 0;
+  border-radius: 5px;
+  animation: move 2s linear 1 forwards;
+}
+
+@keyframes move {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 92%;
+  }
+}
+.input {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  padding: 17px 15px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.input .icon {
+  position: absolute;
+  top: 9px;
+  right: 8px;
+  z-index: 1;
+  color: var(--color);
+  cursor: pointer;
+}
+
+button {
+  align-self: flex-start;
+  padding: 15px 30px;
+  text-transform: capitalize;
+  background-color: var(--color);
+  color: white;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(3, 118, 72);
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-left: 50px;
+    font-size: 30px !important;
+    padding: 14px;
+  }
+  .container h2:nth-child(2) {
+    font-size: 43px !important;
+    width: 80% !important;
+  }
+  .icon {
+    font-size: 33px !important;
+    top: 12px;
+  }
+}
+@media (max-width: 573px) {
+  .container {
+    margin-left: 0;
+    font-size: 23px !important;
+    padding: 14px;
+  }
+  .container h2:nth-child(2) {
+    font-size: 36px !important;
+    width: 80% !important;
+  }
+  .icon {
+    font-size: 30px !important;
+  }
+  input {
+    padding: 15px 15px;
+  }
+  button {
+    padding: 15px 20px;
+  }
+}
+@media (max-width: 372px) {
+  .container {
+    margin-left: 0;
+    font-size: 20px !important;
+    padding: 14px;
+  }
+  .container h2:nth-child(2) {
+    font-size: 31px !important;
+    width: 95% !important;
+  }
+  .icon {
+    font-size: 20px !important;
+  }
+  input {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+  button {
+    padding: 15px 20px;
+  }
+}
